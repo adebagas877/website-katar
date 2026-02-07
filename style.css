@@ -1,3 +1,4 @@
+css
 /* Import Google Fonts & Icons */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css');
@@ -17,12 +18,27 @@ body {
 }
 
 /* Avatar Placeholder */
-.avatar {
-  width: 80px;
-  height: 80px;
-  background: #eee;
+/* Styling Wrapper dan Gambar Avatar */
+.avatar-wrapper {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  overflow: hidden; /* Memotong gambar yang keluar dari lingkaran */
   border-radius: 50%;
-  background-image: url('https://ui-avatars.com/api/?background=random');
+  border: 3px solid #0d6efd; /* Memberi bingkai biru */
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Penting! Agar foto tidak gepeng meski ukurannya beda-beda */
+  display: block;
+}
+
+/* Tambahkan efek hover agar lebih keren */
+.card:hover .avatar-wrapper {
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
 /* Card Animation */
@@ -54,3 +70,35 @@ section {
 @media (max-width: 768px) {
   .hero-section h1 { font-size: 2.5rem; }
 }
+
+/* Style untuk tombol kecil di kartu anggota */
+.social-links .btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    line-height: 30px;
+    font-size: 14px;
+    margin: 0 2px;
+    transition: 0.3s;
+}
+
+/* Style untuk tombol besar di Footer */
+.social-icon {
+    width: 90px;
+    height: 90px;
+    background: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+/* Warna khusus saat di-hover */
+.social-icon.instagram:hover { background: #E1306C; color: white; transform: translateY(-5px); }
+.social-icon.facebook:hover { background: #1877F2; color: white; transform: translateY(-5px); }
+.social-icon.youtube:hover { background: #FF0000; color: white; transform: translateY(-5px); }
+.social-icon.tiktok:hover { background: #000000; color: white; transform: translateY(-5px); }
